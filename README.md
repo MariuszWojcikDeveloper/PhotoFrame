@@ -63,9 +63,9 @@ Edit `photoframe-config.json` with your settings:
     "NetworkLocationPhoto": "\\\\your-nas\\photos\\family",
     "NetworkLocationVideos": "\\\\your-nas\\videos\\family",
     "NetworkDriveControlFile": "\\\\your-nas\\photos\\.connection_test",
-    "CacheSizeGB": 1,
+    "CacheSizeGB": 10,
     "NetworkRefreshPercentage": 10,
-    "SlideshowInterval": 20,
+    "SlideshowInterval": 60,
     "EnableLogging": true,
     "LogFilePath": "photoframe.log"
   }
@@ -80,9 +80,9 @@ Edit `photoframe-config.json` with your settings:
 | `NetworkLocationPhoto` | Network path to photos | `\\nas\photos` or `/mnt/nas/photos` |
 | `NetworkLocationVideos` | Network path to videos | `\\nas\videos` or `/mnt/nas/videos` |
 | `NetworkDriveControlFile` | File to test network connectivity | `\\nas\.connection_test` |
-| `CacheSizeGB` | Maximum cache size in GB | `1` |
+| `CacheSizeGB` | Maximum cache size in GB (default: 10) | `10` |
 | `NetworkRefreshPercentage` | % of time to refresh from network vs cache | `10` (10% network, 90% cache) |
-| `SlideshowInterval` | Seconds between images | `20` |
+| `SlideshowInterval` | Seconds between images (default: 60) | `60` |
 | `EnableLogging` | Enable file logging | `true` or `false` |
 | `LogFilePath` | Log file path | `photoframe.log` |
 
