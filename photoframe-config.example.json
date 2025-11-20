@@ -1,0 +1,16 @@
+{
+  "PhotoFrame": {
+    "FolderPath": "C:\\PhotoFrame\\Cache",
+    "NetworkLocationPhoto": "\\\\your-nas\\photos\\family",
+    "NetworkLocationVideos": "\\\\your-nas\\videos\\family",
+    "NetworkDriveControlFile": "\\\\your-nas\\photos\\.connection_test",
+    "CacheSizeGB": 1,
+    "NetworkRefreshPercentage": 10,
+    "SlideshowInterval": 20,
+    "EnableLogging": true,
+    "LogFilePath": "photoframe.log",
+    "TapoEmail": "your-email@example.com",
+    "TapoPassword": "your-tapo-password",
+    "TapoDeviceIp": "192.168.1.xxx"
+  }
+}

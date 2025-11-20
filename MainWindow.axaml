@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotoFrame"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PhotoFrame.MainWindow"
+        Title="PhotoFrame"
+        WindowState="FullScreen"
+        Background="Black"
+        KeyDown="OnKeyDown">
+    
+    <Grid>
+        <!-- Photo display area -->
+        <Image Name="PhotoImage" 
+               Stretch="Uniform" 
+               StretchDirection="Both"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+        
+        <!-- Video display placeholder -->
+        <Border Name="VideoContainer"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                IsVisible="False"
+                Background="Black">
+            <StackPanel HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Spacing="20">
+                <TextBlock Text="🎬 Video Player"
+                          FontSize="48"
+                          Foreground="White"
+                          TextAlignment="Center"
+                          HorizontalAlignment="Center" />
+                <TextBlock Name="VideoStatusText"
+                          Text="Video will be played in separate window..."
+                          FontSize="20"
+                          Foreground="LightGray"
+                          TextAlignment="Center"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap" />
+            </StackPanel>
+        </Border>
+        
+        <!-- Loading text -->
+        <TextBlock Name="LoadingText"
+                   Text="PhotoFrame • SPACE=pause/resume • RIGHT=next • F11=fullscreen • ESC=exit"
+                   Foreground="White"
+                   FontSize="14"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="20"
+                   Opacity="0.7"
+                   TextWrapping="Wrap" />
+        
+        <!-- Current photo info -->
+        <StackPanel Name="InfoPanel"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20"
+                    Background="#AA000000">
+            <TextBlock Name="PhotoInfoText"
+                       Foreground="White"
+                       FontSize="14"
+                       Padding="10" />
+        </StackPanel>
+    </Grid>
+</Window>
