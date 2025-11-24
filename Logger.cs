@@ -29,15 +29,19 @@ public static class Logger
             
         if (enableLogging)
         {
-            var logPath = !string.IsNullOrWhiteSpace(logFilePath) 
+            var logPath = !string.IsNullOrWhiteSpace(logFilePath)
                 ? Path.GetFullPath(logFilePath)
                 : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PhotoFrame.log");
-                
-            loggerConfig.WriteTo.File(logPath, 
+
+            // Configure Serilog to roll on file size limit and keep only one file
+            loggerConfig.WriteTo.File(
+                logPath,
                 outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] [Thread {ThreadId}] {Message:lj}{NewLine}{Exception}",
                 rollingInterval: RollingInterval.Infinite,
                 fileSizeLimitBytes: 10_485_760, // 10 MB limit
-                retainedFileCountLimit: 1);
+                rollOnFileSizeLimit: true,
+                retainedFileCountLimit: 1
+            );
         }
         
         _logger = loggerConfig.CreateLogger();
